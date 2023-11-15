@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Código HTML</title>
+    <style>
+        /* Aquí puedes agregar estilos CSS para tu formulario */
+    </style>
+</head>
+<body>
+    <h2>Generador de Código HTML para WordPress</h2>
+    <form id="htmlGeneratorForm">
+        <label for="id">ID:</label><br>
+        <input type="text" id="id" name="id"><br>
+        <label for="fullName">Nombre completo:</label><br>
+        <input type="text" id="fullName" name="fullName"><br>
+        <label for="position">Cargo:</label><br>
+        <input type="text" id="position" name="position"><br>
+        <label for="email">Correo:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="extension">Anexo:</label><br>
+        <input type="text" id="extension" name="extension"><br><br>
+        <input type="button" value="Generar Código HTML" onclick="generateHTML()">
+    </form>
+
+    <h3>Código HTML Generado:</h3>
+    <textarea id="generatedHtml" rows="10" cols="50"></textarea>
+
+    <script>
+        function generateHTML() {
+    var id = document.getElementById('id').value;
+    var fullName = document.getElementById('fullName').value;
+    var position = document.getElementById('position').value;
+    var email = document.getElementById('email').value;
+    var extension = document.getElementById('extension').value;
+
+    var htmlCode = '<tr>\
+<td width="200"><a href="https://intranet.servel.cl/wp-content/uploads/2022/06/' + id + '.jpg"><img class="alignnone size-full wp-image-15227" src="https://intranet.servel.cl/wp-content/uploads/2022/06/' + id + '.jpg" alt="" width="200" height="267"></a></td>\
+<td>' + fullName + '<br>' + position + '<br><a href="mailto:' + email + '">' + email + '</a><br>Anexo: ' + extension + '</td>\
+</tr>';
+
+    document.getElementById('generatedHtml').textContent = htmlCode;
+}
+
+    </script>
+</body>
+</html>
